@@ -7,12 +7,12 @@ def ButtonClicked():
     isOk = False
 
     if len(b) != 4:
-            tmsg.showwarning("오류", "네 자릿수의 숫자인지 판정한다")
+            tmsg.showwarning("오류", "네 자릿수의 숫자인지 확인하세요")
     else:
         numberOk = True
         for i in range(4):
             if b[i] < "0" or b[i] > "9":
-                print("숫자가 아닙니다.")
+                tmsg.showwarning("오류", "숫자가 아닙니다")
                 numberOk = False
                 break
         if numberOk:
@@ -29,12 +29,12 @@ def ButtonClicked():
                 if (int(b[j]) == a[i]) and (a[i] != int(b[i])) and (int(b[j]) != a[j]):
                     blow += 1
                     break
+        if hit == 4 :
+            tmsg.showinfo("맞췄다", "축하합니다. 정답입니다")
+            root.destroy()
+        else:
+            historybox.insert(tk.END, b + "\t" + "/ H: " + str(hit) + " B: " + str(blow) + "\n")
     
-    if hit == 4 :
-        tmsg.showinfo("맞췄다", "축하합니다. 정답입니다")
-        root.destroy()
-    else:
-        historybox.insert(tk.END, b + " / H: " + str(hit) + " B: " + str(blow) + "\n")
 
 
 
