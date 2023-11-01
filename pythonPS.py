@@ -80,3 +80,87 @@
 #         if x + y == (brown-4)//2 and x >= y:
 #             print(x+2,y+2)
 #             break
+
+#PS-8 10부제 차량 위반 차량 수 세기
+# n = 1
+# cars = [1,3,0,6,4]
+# def solution(num, cars):
+#     count = 0
+#     for car in cars:
+#         if num == car:
+#             count += 1
+#     return count
+# print(solution(5,cars))
+
+#PS-9 가장 높은 점수와 낮은 점수의 차 구하기
+# scores = [85,42,79,95,37,11,72,32]
+# def solution(scores):
+#     Max = scores[0]
+#     Min = scores[0]
+#     for s in scores:
+#         if s > Max:
+#             Max = s
+#         if s < Min:
+#             Min = s
+#     return Max-Min
+
+# print(solution(scores))
+
+#PS-10
+# n = 18
+# def solution(n):
+#     # countArr = [] #내가 푼 방법 : 3킬로 봉지와 5킬로 봉지의 개수를 변수로 설정하고 모든 경우의 수를 구한 다음 최솟값을 리턴
+#     # x_3 = 1
+#     # while 3*x_3 <=n:
+#     #     y_5 = 0
+#     #     while (3*x_3 + 5*y_5) <= n:
+#     #         if (3*x_3 + 5*y_5) == n:
+#     #             countArr.append(x_3+y_5)
+#     #             break
+#     #         y_5 += 1
+#     #     x_3 += 1
+#     # if not countArr:
+#     #     return -1
+#     # return min(countArr)
+#     ans = 0 # 정답 : 5킬로 봉지가 많을수록 봉지수가 줄어드니 전체 n에서 3씩 나눠주고 5로 나눠지면 해당 봉지 수 리턴
+#     while n > 0:
+#         if n % 5 == 0:
+#             break
+#         n -= 3
+#         ans += 1
+#     if n % 5 != 0:
+#         ans = -1
+#     else:
+#         ans += n//5 # ans의 수는 3킬로 봉지수 n//5의 값은 5킬로 봉지수
+
+#     return ans
+
+# print(solution(n))
+
+#PS-11 낮엔 a 높이만큼 올라가고 밤엔 b 높이만큼 내려가는 달팽이의 정상도착 일수 구하기
+# a = 100
+# b = 99
+# v = 100000000
+# def solution(a,b,v):
+#     # height = 0 #반복문을 활용해서 구현
+#     # count = 0
+#     # while height < v:
+#     #     count += 1
+#     #     height += a
+#     #     if(height >= v):
+#     #         break
+#     #     height -= b
+#     #     print(count)
+#     # return count
+#     ans = 1 # 반복문을 사용하지 않고 구현
+#     v -= a
+#     if v > 0:
+#         ans += v//(a-b)
+#         if v%(a-b) > 0:
+#             ans += 1
+#     return ans
+
+# print(solution(a,b,v))
+
+#PS-12
+
