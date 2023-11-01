@@ -68,4 +68,15 @@
 
 # print(Max)
 
-#PS-7
+#PS-7 중앙의 노란색 타일의 수와 그걸 둘러싼 1줄의 갈색 타일의 수가 주어졌을 때 가로, 세로 길이 구하기
+# brown = int(input())
+# yellow = int(input())
+
+# for i in range(1,yellow+1): #0으로 나눌 수 없음
+    
+#     if (yellow%i) == 0:
+#         x = yellow//i
+#         y = yellow//x
+#         if x + y == (brown-4)//2 and x >= y:
+#             print(x+2,y+2)
+#             break
