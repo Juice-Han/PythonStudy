@@ -162,5 +162,15 @@
 
 # print(solution(a,b,v))
 
-#PS-12
+#PS-12 더하기 싸이클
+# N = 0
 
+# def solution(N):
+#     count = 1
+#     newNum = (N%10)*10 + (N//10 + N%10)%10
+#     while newNum != N :
+#         newNum = (newNum%10)*10 + (newNum//10 + newNum%10)%10
+#         count += 1
+#     return count
+
+# print(solution(N))
