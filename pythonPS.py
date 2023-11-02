@@ -174,3 +174,39 @@
 #     return count
 
 # print(solution(N))
+
+#PS-13 OX퀴즈
+# result = "OOOOXOOOOXOOOOX"
+
+# def solution(result):
+#     count = 0
+#     Sum = 0
+#     for i in result:
+#         if i == "O":
+#             count += 1
+#             Sum += count
+#         else:
+#             count = 0
+#     return Sum
+# print(solution(result))
+
+#PS-14 숫자의 개수
+# A = 150
+# B = 266
+# C = 427
+
+# def solution(A,B,C):
+#     arr = [0 for _ in range(10)]
+#     # mul = str(A*B*C) #내가 푼 방법
+#     # for i in range(10):
+#     #     for num in mul:
+#     #         if int(num) == i:
+#     #             arr[i] += 1
+    
+#     num = A*B*C # 해답에 나온 풀이 <- 해당 숫자와 인덱스가 같다는 걸 잘 활용하여 코드를 간단하게 만듦
+#     while num > 0:
+#         arr[num%10] += 1
+#         num //= 10
+#     return arr
+        
+# print(solution(A,B,C))
