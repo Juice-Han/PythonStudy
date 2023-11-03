@@ -210,3 +210,79 @@
 #     return arr
         
 # print(solution(A,B,C))
+
+#PS-15
+# n = 10
+
+# def solution(n):
+#     ans = ""
+    
+#     # while n > 0:
+#     #     n -= 1
+#     #     if n%3 == 0:
+#     #         ans += '1'
+#     #     elif n % 3 == 1:
+#     #         ans += '2'
+#     #     else:
+#     #         ans += '4'
+#     #     n //= 3
+#     # return ans[::-1]
+    
+#     while n > 0:    
+#         n -= 1
+#         v = n % 3
+#         if v == 0:
+#             ans += '1'
+#         elif v == 1:
+#             ans += '2'
+#         else:
+#             ans += '4'
+#         n = n // 3
+#     return ans[::-1]
+        
+
+# print(solution(n))
+
+#PS-16 손익분기점
+# A = 1000
+# B = 70
+# C = 170
+
+# def solution(A,B,C):
+#     if (C-B) < 0:
+#         return -1
+#     ans = A//(C-B) + 1
+#     return ans
+
+# print(solution(A,B,C))    
+
+#PS-17 큰 수 A+B
+# def solution(A,B):
+#     ans = ""
+#     A = A[::-1]
+#     B = B[::-1]
+#     if len(A) > len(B):
+#         C = A
+#         A = B
+#         B = C
+    
+#     c = 0
+
+#     for i in range(len(A)):
+#         ans += str((int(A[i]) + int(B[i]) + c)%10)
+#         c = (int(A[i]) + int(B[i]) + c) // 10
+    
+#     for i in range(len(A),len(B)):
+#         ans += str((int(B[i]) + c )% 10)
+#         c = (int(B[i]) + c) // 10
+    
+#     if c == 1:
+#         ans += '1'
+    
+#     return ans[::-1]
+
+    
+
+# A = "9223372036854775807"
+# B = "9223372036854775808"
+# print(solution(A,B))
