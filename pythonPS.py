@@ -286,3 +286,132 @@
 # A = "9223372036854775807"
 # B = "9223372036854775808"
 # print(solution(A,B))
+
+#PS-18 
+# n = 58
+# def solution(n):
+#     count = 1
+#     pl = 6
+#     while n > 1: 
+#         n -= pl
+#         count += 1
+#         pl *= 2
+#     return count
+
+# print(solution(n))
+
+#PS-19
+# n = 500
+# lists = [93,181,245,214,315,36,185,216,295]
+
+# def solution(n,lists):
+#     maxsum = 0
+#     for i in range(1,len(lists)-2):
+#         for j in range(i+1, len(lists)-1):
+#             for k in range(i+2, len(lists)):
+#                 Sum = lists[i]+lists[j]+lists[k]
+#                 if (Sum > maxsum) and (Sum <= n):
+#                     maxsum = Sum
+#     return maxsum
+
+# print(solution(n,lists))
+
+#PS-20
+# nums = [7,5,11,13,1,3]
+
+# def solution(nums):
+#     count = 0
+#     for n in nums:
+#         for i in range(len(nums)):
+#             if nums[i] == n*2:
+#                 count += 1
+#     return count
+
+# print(solution(nums))
+
+#PS-21
+# dwarfs = [8,6,5,1,37,30,28,22,36]
+# def solution(dwarfs):
+#     Sum = sum(dwarfs)
+#     for i in range(len(dwarfs)-1):
+#         for j in range(i+1,len(dwarfs)):
+#             if (Sum - dwarfs[i] - dwarfs[j]) == 100:
+#                 dwarfs.remove(dwarfs[j])
+#                 dwarfs.remove(dwarfs[i])
+#                 return dwarfs
+
+# print(solution(dwarfs))
+
+#PS-22
+# N = 216
+
+# def solution(N):
+#     for i in range(N):
+#         num = str(i)
+#         Sum = i
+#         for n in num:
+#             Sum += int(n)
+#         if Sum == N:
+#             return i
+#     return 0            
+
+# print(solution(N))
+
+#PS-23
+# people = [[55,185], [58,183], [88,186], [60,175], [46,155]]
+
+# def solution(people):
+#     # length = len(people) #내가 푼 풀이
+#     # grade = [1 for _ in range(length)]
+#     # for a in range(length-1):
+#     #     for b in range(a+1,length):
+#     #         if (people[a][0] < people[b][0]) and (people[a][1] < people[b][1]):
+#     #             grade[a] += 1
+#     #         elif (people[a][0] > people[b][0]) and (people[a][1] > people[b][1]):
+#     #             grade[b] += 1
+
+#     grade = []
+#     for person in people:
+#         rank = 1
+#         for compare in people:
+#             if person[0] < compare[0] and person[1] < compare[1]:
+#                 rank += 1
+#         grade.append(rank)
+#     return grade
+
+# print(solution(people))
+
+#PS-24
+# board = ["BBBBBBBBWBWBW", "BBBBBBBBBWBWB", "BBBBBBBBWBWBW", "BBBBBBBBBWBWB", "BBBBBBBBWBWBW", "BBBBBBBBBWBWB", "BBBBBBBBWBWBW", "BBBBBBBBBWBWB", "WWWWWWWWWWBWB", "WWWWWWWWWWBWB"]
+
+# def check(board):
+#     ans1 = 64
+#     ans2 = 64
+
+#     board1 = ["WBWBWBWB", "BWBWBWBW", "WBWBWBWB", "BWBWBWBW", "WBWBWBWB", "BWBWBWBW", "WBWBWBWB", "BWBWBWBW"]
+#     board2 = ["BWBWBWBW", "WBWBWBWB", "BWBWBWBW", "WBWBWBWB", "BWBWBWBW", "WBWBWBWB", "BWBWBWBW","WBWBWBWB"]
+
+#     for i in range(8):
+#         for j in range(8):
+            
+#             if board1[i][j] != board[i][j]:
+#                 ans1 -= 1
+#             if board2[i][j] != board[i][j]:
+#                 ans2 -= 1
+    
+#     return min(ans1,ans2)
+
+
+# def solution(board):
+#     ans = 64
+#     n = len(board)
+#     m = len(board[0])
+#     for i in range(n-7):
+#         for j in range(m-7):
+#             temp=[]
+#             for k in range(8):
+#                 temp.append(board[i+k][j:j+8]) # 2차월 배열에 이중 슬라이싱은 불가하다
+#             ans = min(ans,check(temp))
+#     return ans
+
+# print(solution(board))
