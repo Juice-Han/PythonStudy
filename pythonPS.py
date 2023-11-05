@@ -1,4 +1,5 @@
 # PS-1 문자열 중간 출력하기
+
 # a = input()
 # n = len(a)
 # if n % 2 == 0:
@@ -7,6 +8,7 @@
 #     print(a[n//2])
 
 #PS-2 입력된 값 사이 값들의 총합 구하기
+
 # a = int(input())
 # b = int(input())
 # sum = 0
@@ -22,6 +24,7 @@
 # print(sum)
 
 #PS-3 입력된 수의 약수들의 총합 구하기
+
 # n = int(input())
 # sum = 0
 
@@ -32,6 +35,7 @@
 # print(sum)
 
 #PS-4 피보나치 수열 항 구하기
+
 # n = int(input())
 # arr = [0,1]
 # for i in range(1,n):
@@ -39,6 +43,7 @@
 # print(arr[n])
 
 #PS-5 입력된 수들 중 홀수들의 함을 구하고 그 중 최솟값을 구하기
+
 # oddArr = []
 # Sum = 0
 
@@ -57,6 +62,7 @@
 # print(str(Sum) + " " + str(minOdd))
 
 #PS-6 1~4번 기차역에 내린사람 탄사람이 순서대로 입력될 때, 기차에 가장 많은 사람이 타 있을 때 사람 수는?
+
 # Sum = 0
 # Max = 0
 
@@ -69,6 +75,7 @@
 # print(Max)
 
 #PS-7 중앙의 노란색 타일의 수와 그걸 둘러싼 1줄의 갈색 타일의 수가 주어졌을 때 가로, 세로 길이 구하기
+
 # brown = int(input())
 # yellow = int(input())
 
@@ -82,6 +89,7 @@
 #             break
 
 #PS-8 10부제 차량 위반 차량 수 세기
+
 # n = 1
 # cars = [1,3,0,6,4]
 # def solution(num, cars):
@@ -93,6 +101,7 @@
 # print(solution(5,cars))
 
 #PS-9 가장 높은 점수와 낮은 점수의 차 구하기
+
 # scores = [85,42,79,95,37,11,72,32]
 # def solution(scores):
 #     Max = scores[0]
@@ -107,6 +116,7 @@
 # print(solution(scores))
 
 #PS-10
+
 # n = 18
 # def solution(n):
 #     # countArr = [] #내가 푼 방법 : 3킬로 봉지와 5킬로 봉지의 개수를 변수로 설정하고 모든 경우의 수를 구한 다음 최솟값을 리턴
@@ -138,6 +148,7 @@
 # print(solution(n))
 
 #PS-11 낮엔 a 높이만큼 올라가고 밤엔 b 높이만큼 내려가는 달팽이의 정상도착 일수 구하기
+
 # a = 100
 # b = 99
 # v = 100000000
@@ -163,6 +174,7 @@
 # print(solution(a,b,v))
 
 #PS-12 더하기 싸이클
+
 # N = 0
 
 # def solution(N):
@@ -176,6 +188,7 @@
 # print(solution(N))
 
 #PS-13 OX퀴즈
+
 # result = "OOOOXOOOOXOOOOX"
 
 # def solution(result):
@@ -191,6 +204,7 @@
 # print(solution(result))
 
 #PS-14 숫자의 개수
+
 # A = 150
 # B = 266
 # C = 427
@@ -212,6 +226,7 @@
 # print(solution(A,B,C))
 
 #PS-15
+
 # n = 10
 
 # def solution(n):
@@ -244,6 +259,7 @@
 # print(solution(n))
 
 #PS-16 손익분기점
+
 # A = 1000
 # B = 70
 # C = 170
@@ -257,6 +273,7 @@
 # print(solution(A,B,C))    
 
 #PS-17 큰 수 A+B
+
 # def solution(A,B):
 #     ans = ""
 #     A = A[::-1]
@@ -288,6 +305,7 @@
 # print(solution(A,B))
 
 #PS-18 
+
 # n = 58
 # def solution(n):
 #     count = 1
@@ -301,6 +319,7 @@
 # print(solution(n))
 
 #PS-19
+
 # n = 500
 # lists = [93,181,245,214,315,36,185,216,295]
 
@@ -317,6 +336,7 @@
 # print(solution(n,lists))
 
 #PS-20
+
 # nums = [7,5,11,13,1,3]
 
 # def solution(nums):
@@ -330,6 +350,7 @@
 # print(solution(nums))
 
 #PS-21
+
 # dwarfs = [8,6,5,1,37,30,28,22,36]
 # def solution(dwarfs):
 #     Sum = sum(dwarfs)
@@ -343,6 +364,7 @@
 # print(solution(dwarfs))
 
 #PS-22
+
 # N = 216
 
 # def solution(N):
@@ -358,6 +380,7 @@
 # print(solution(N))
 
 #PS-23
+
 # people = [[55,185], [58,183], [88,186], [60,175], [46,155]]
 
 # def solution(people):
@@ -382,6 +405,7 @@
 # print(solution(people))
 
 #PS-24
+
 # board = ["BBBBBBBBWBWBW", "BBBBBBBBBWBWB", "BBBBBBBBWBWBW", "BBBBBBBBBWBWB", "BBBBBBBBWBWBW", "BBBBBBBBBWBWB", "BBBBBBBBWBWBW", "BBBBBBBBBWBWB", "WWWWWWWWWWBWB", "WWWWWWWWWWBWB"]
 
 # def check(board):
@@ -415,3 +439,39 @@
 #     return ans
 
 # print(solution(board))
+
+#PS-25 피보나치 수
+
+# def solution(n):
+#     if n < 2:
+#         return n
+#     return solution(n-1) + solution(n-2)
+
+# n = 15
+# print(solution(n))
+
+#PS-26
+
+# def solution(n):
+#     if n == 1:
+#         return 1
+#     return n * solution(n-1)
+
+# n = 10
+# print(solution(n))
+
+#PS-27 하노이탑 옮기기
+# def solve(n, From, To):
+#     ans = 0
+#     if n == 0:
+#         return 0
+#     ans += solve(n-1,From,6-From-To)
+#     print(From,To)
+#     ans += solve(n-1,6-From-To,To)
+#     return ans
+
+# def solution(n):
+#     return solve(n,1,3)
+
+# n = 5
+# solution(n)
