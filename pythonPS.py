@@ -475,3 +475,23 @@
 
 # n = 5
 # solution(n)
+
+#PS-28 부분수열의 합
+# s = 0
+# nums = [-7, -2, -3, 8, 6]
+# count = 0
+
+# def solve(Sum,nums,s,n):
+#     global count
+#     if n == len(nums):
+#         return
+#     if Sum + nums[n] == s:
+#         count+=1
+#     solve(Sum+nums[n],nums,s,n-1)
+#     solve(Sum,nums,s,n-1)
+
+# def solution(nums,s):
+#     solve(0,nums,s,0)
+
+# solution(nums,s)
+# print(count)
