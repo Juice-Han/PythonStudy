@@ -495,3 +495,35 @@
 
 # solution(nums,s)
 # print(count)
+
+#PS-29
+# ans = [] # 내가 푼 해답
+# S = [1,2,3,5,8,13,21,34]
+# def solution(S,n):
+#     global ans
+#     if len(S) == 6:
+#         ans.append(S)
+#         return
+#     if n < 0:
+#         return
+#     tmp = S[:]
+#     tmp.remove(S[n])
+#     solution(tmp,n-1)
+#     solution(S,n-1)
+# solution(S,len(S)-1)
+# print(ans)
+# ans = [] # 해설지에 적힌 해답
+# def solve(s,n,k):
+#     if len(k)==6:
+#         ans.append([])
+#         for num in k:
+#             ans[-1].append(num)
+    
+#     for i in range(n,len(s)):
+#         k.append(i)
+#         solve(s,n+1,k)
+#         del k[-1]
+
+# def solution(s):
+#     solve(s,0,[])
+#     return ans
