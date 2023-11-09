@@ -527,3 +527,44 @@
 # def solution(s):
 #     solve(s,0,[])
 #     return ans
+
+#PS-30
+# values=[] # 내가 푼 풀이
+# energies = [1,2,3,4]
+
+# def solve(energies,total):
+#     global values
+#     length = len(energies)
+#     if length == 2:
+#         values.append(total)
+#         return
+#     for i in range(1,length-1):
+#         tmp_energies = energies[:]
+#         tmp_total = total + (energies[i-1]*energies[i+1])
+#         tmp_energies.remove(energies[i])
+#         solve(tmp_energies,tmp_total)
+# def solution(energies):
+#     solve(energies,0)
+
+# solution(energies)
+# print(max(values))
+
+# energies = [1,2,3,4] 해답지 풀이 : 전역변수를 사용하지 않고 요소를 뺏다가 재귀함수 호출하고 요소를 다시 넣는 방법으로 최댓값을 구했다.
+# def solve(energies, total):
+#     if len(energies) <= 2:
+#         return total
+    
+#     ans = 0
+
+#     for i in range(1, len(energies) -1):
+#         temp = energies[i]
+#         del energies[i]
+#         ans = max(ans,solve(energies,total+energies[i-1]*energies[i]))
+#         energies.insert(i,temp)
+    
+#     return ans
+
+# def solution(energies):
+#     return solve(energies,0)
+
+# print(solution(energies))
