@@ -568,3 +568,43 @@
 #     return solve(energies,0)
 
 # print(solution(energies))
+
+#PS-31
+
+# results = []
+# nums = [1,2,3,4,5,6]
+# operators = [3,2,1,1]
+
+# def solve(nums,operators,total):
+#     global results
+#     if len(nums) == 0:
+#         results.append(total)
+#         return
+#     for i in range(len(operators)):
+#         if operators[i] == 0:
+#             continue
+#         operators[i] -= 1
+#         tmp = nums[0]
+#         del nums[0]
+        
+#         if i == 0:
+#             solve(nums,operators,total+tmp)
+#         elif i == 1:
+#             solve(nums,operators,total-tmp)
+#         elif i == 2:
+#             solve(nums,operators,total*tmp)
+#         else:
+#             if total < 0:
+#                 solve(nums,operators,((-1)*total//tmp)*(-1))
+#             else:
+#                 solve(nums,operators,total//tmp)
+#         nums.insert(0,tmp)
+#         operators[i] += 1
+
+# def solution(nums,operators):
+#     total = nums[0]
+#     del nums[0]
+#     solve(nums,operators,total)
+
+# solution(nums,operators)
+# print(max(results),min(results))
