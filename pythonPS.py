@@ -608,3 +608,25 @@
 
 # solution(nums,operators)
 # print(max(results),min(results))
+
+#PS-32
+board = "dcdd"
+
+def solve(board,n):
+    if len(board) == n:
+        return 1
+    if board[n] == 'd':
+        if n > 0 and board[n-1] == 'd':
+            return 9*solve(board,n+1)
+        else:
+            return 10*solve(board,n+1)    
+    else:
+        if n > 0 and board[n-1] == 'c':
+            return 25*solve(board,n+1)
+        else:
+            return 26*solve(board,n+1)
+        
+def solution(board):
+    return solve(board,0)
+
+print(solution(board))
