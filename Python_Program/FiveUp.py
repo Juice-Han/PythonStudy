@@ -39,7 +39,7 @@ def string_representation(stack):
         if card[-1] in ['c','d','h','s']:
             ans += '** '
         else:
-            ans += str(card)
+            ans += card
             ans += ' '
     ans = ans[0:len(ans)-1]
     return ans
