@@ -21,7 +21,7 @@
 #     n_list = tmp
 # print(n_list[0])
 
-#괄호 9012번
+# 괄호 9012번
 # class MyStack:
 #     def __init__(self,size):
 #         self.size = size
@@ -60,3 +60,22 @@
 #         print('YES')
 #     else:
 #         print('NO')
+
+# 숫자 카드 2 10816번
+import sys
+N = int(input())
+n_list = list(map(int,sys.stdin.readline().strip().split()))
+n_dict = dict()
+for n in n_list:
+    if n in n_dict:
+        n_dict[n] += 1
+    else:
+        n_dict[n] = 1
+
+M = int(input())
+m_list = list(map(int,sys.stdin.readline().strip().split()))
+for m in m_list:
+    if m in n_dict:
+        sys.stdout.write(str(n_dict[m]) + ' ')
+    else:
+        sys.stdout.write('0 ')
