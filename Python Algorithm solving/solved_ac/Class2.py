@@ -141,3 +141,76 @@
 #             print(str(queue[front+1]) + '\n')
 #         else:
 #             print(str(queue[back]) + '\n')
+
+# 덱 10866번
+
+# from sys import stdin, stdout
+# N = int(input())
+# deque = [0 for _ in range(10000)]
+# f = 0
+# b = 1
+# def push_front(deque,v):
+#     global f
+#     deque[f] = v
+#     f = (f + 9999) % 10000
+# def push_back(deque,v):
+#     global b
+#     deque[b] = v
+#     b = (b + 10001) % 10000
+# def pop_front(deque):
+#     global f,b
+#     if (f + 10001) % 10000 == b:
+#         stdout.write('-1\n')
+#     else:
+#         f = (f + 10001) % 10000
+#         stdout.write(str(deque[f]) + '\n')
+# def pop_back(deque):
+#     global f,b
+#     if (f + 10001) % 10000 == b:
+#         stdout.write('-1\n')
+#     else:
+#         b = (b + 9999) % 10000
+#         stdout.write(str(deque[b]) + '\n')
+# def size():
+#     global f,b
+#     s = (b-f+9999)%10000
+#     stdout.write(str(s)+'\n')
+# def empty():
+#     global f,b
+#     if (f + 10001) % 10000 == b:
+#         stdout.write('1\n')
+#     else:
+#         stdout.write('0\n')
+# def front(deque):
+#     global f,b
+#     if (f + 10001) % 10000 == b:
+#         stdout.write('-1\n')
+#     else:
+#         stdout.write(str(deque[(f+10001)%10000])+'\n')
+# def back(deque):
+#     global f,b
+#     if (f + 10001) % 10000 == b:
+#         stdout.write('-1\n')
+#     else:
+#         stdout.write(str(deque[(b+9999)%10000])+'\n')
+
+# for i in range(N):
+#     op = stdin.readline().strip()
+#     if 'push_front' in op:
+#         op, v = op.split()
+#         push_front(deque,int(v))
+#     elif 'push_back' in op:
+#         op, v = op.split()
+#         push_back(deque,int(v))
+#     elif op == 'pop_front':
+#         pop_front(deque)
+#     elif op == 'pop_back':
+#         pop_back(deque)
+#     elif op == 'size':
+#         size()
+#     elif op == 'empty':
+#         empty()
+#     elif op == 'front':
+#         front(deque)
+#     else:
+#         back(deque)
