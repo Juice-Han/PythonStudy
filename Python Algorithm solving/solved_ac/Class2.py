@@ -108,3 +108,36 @@
 #             print('-1\n')
 #         else:
 #             print(str(stack[-1])+'\n')
+
+# 큐 10845번
+
+# import sys
+# input = sys.stdin.readline
+# print = sys.stdout.write
+# queue = []
+# front = -1
+# back = -1
+# N = int(input().strip())
+# for i in range(N):
+#     op = input().strip()
+#     if 'push' in op:
+#         op, v = op.split()
+#         queue.append(int(v))
+#         back += 1
+#     elif op == 'pop':
+#         if front == back:
+#             print('-1\n')
+#         else:
+#             front += 1
+#             print(str(queue[front]) + '\n')
+#     elif op == 'size':
+#         print(str(back - front) + '\n')
+#     elif op == 'empty':
+#         print('1\n') if front == back else print('0\n')
+#     else:
+#         if front == back:
+#             print('-1\n')
+#         elif op == 'front':
+#             print(str(queue[front+1]) + '\n')
+#         else:
+#             print(str(queue[back]) + '\n')
