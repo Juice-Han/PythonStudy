@@ -214,3 +214,21 @@
 #         front(deque)
 #     else:
 #         back(deque)
+
+# 덩치 7568번
+
+# from sys import stdin, stdout
+# N = int(stdin.readline().strip())
+# people = []
+# for i in range(N):
+#     people.append(list(map(int,stdin.readline().split())))
+
+# grade = [1 for _ in range(N)]
+# for i in range(N-1):
+#     for j in range(i+1,N):
+#         if people[i][0] > people[j][0] and people[i][1] > people[j][1]:
+#             grade[j] += 1
+#         elif people[i][0] < people[j][0] and people[i][1] < people[j][1]:
+#             grade[i] += 1
+# for g in grade:
+#     stdout.write(str(g) + ' ')
