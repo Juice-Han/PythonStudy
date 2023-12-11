@@ -232,3 +232,19 @@
 #             grade[i] += 1
 # for g in grade:
 #     stdout.write(str(g) + ' ')
+
+# 좌표 정렬하기 2 11651번
+
+# from sys import stdin, stdout
+# N = int(stdin.readline())
+# y_list = [[] for _ in range(200001)]
+# for i in range(N):
+#     x, y = map(int,stdin.readline().split())
+#     y_list[y+100000].append(x)
+# for i in range(200001):
+#     y_list[i].sort()
+#     if len(y_list[i]) != 0:
+#         for x in y_list[i]:
+#             stdout.write(f'{x} {i-100000}\n')
+
+# 설탕 배달 2839번
