@@ -301,3 +301,39 @@
 #     else:
 #         n_list.append(n)
 # stdout.write(str(sum(n_list)) + '\n')
+
+# solved.ac 18110번
+
+# from sys import stdin, stdout
+# N = int(stdin.readline())
+# if N == 0:
+#     stdout.write('0\n')
+# else:
+#     dif = [0 for _ in range(30)]
+#     for i in range(N):
+#         dif[int(stdin.readline())-1] += 1
+#     cutN = round(N*0.15 + 1e-9)
+#     i = 0
+#     count = 0
+#     while count != cutN:
+#         if dif[i] > 0:
+#             dif[i] -= 1
+#             count += 1
+#         else:
+#             i += 1
+
+#     i = 29
+#     count = 0
+#     while count != cutN:
+#         if dif[i] > 0:
+#             dif[i] -= 1
+#             count += 1
+#         else:
+#             i -= 1
+
+#     S = 0
+#     for i in range(30):
+#         S += dif[i] * (i+1)
+#     avg = round(S/sum(dif) + 1e-9)
+#     stdout.write(str(avg) + '\n')
+    
