@@ -258,3 +258,46 @@
 #         break
 #     f -= 1
 # print(count)
+
+# 균형잡힌 세상 4949번
+
+# def check(words):
+#     stack = [0 for _ in range(100)]
+#     tos = -1
+#     for w in words:
+#         if w == '(' or w == '[':
+#             tos += 1
+#             stack[tos] = w
+#         elif w == ')' or w == ']':
+#             if tos == -1:
+#                 return False
+#             if w == ')' and stack[tos] != '(':
+#                 return False
+#             elif w == ']' and stack[tos] != '[':
+#                 return False
+#             tos -= 1
+#     if tos != -1 :
+#         return False
+#     return True
+
+# from sys import stdin, stdout
+# words = stdin.readline().rstrip()
+# while words != '.':
+#     if check(words):
+#         stdout.write('yes\n')
+#     else:
+#         stdout.write('no\n')
+#     words = stdin.readline().rstrip()
+
+# 제로 10773번
+
+# from sys import stdin, stdout
+# N = int(stdin.readline())
+# n_list = []
+# for i in range(N):
+#     n = int(stdin.readline())
+#     if n == 0:
+#         del n_list[-1]
+#     else:
+#         n_list.append(n)
+# stdout.write(str(sum(n_list)) + '\n')
