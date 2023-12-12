@@ -248,3 +248,13 @@
 #             stdout.write(f'{x} {i-100000}\n')
 
 # 설탕 배달 2839번
+# N = int(input())
+# count = -1
+# f = N // 5
+# while f >= 0 :
+#     if (N-5*f) % 3 == 0:
+#         t = (N-5*f) // 3
+#         count = f + t
+#         break
+#     f -= 1
+# print(count)
