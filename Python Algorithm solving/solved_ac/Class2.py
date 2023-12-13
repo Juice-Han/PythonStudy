@@ -336,4 +336,18 @@
 #         S += dif[i] * (i+1)
 #     avg = round(S/sum(dif) + 1e-9)
 #     stdout.write(str(avg) + '\n')
-    
+
+# 소수 구하기 1929번
+
+# from sys import stdin, stdout
+# M, N = map(int,stdin.readline().split())
+# n_list = [1 for _ in range(N)]
+# n_list[0] = 0
+# for i in range(1,N-1):
+#     if n_list[i] != 0:
+#         n = i + 1
+#         for j in range(i+n,N,n):
+#             n_list[j] = 0
+# for i in range(M-1,N):
+#     if n_list[i] == 1:
+#         stdout.write(str(i+1) + '\n')
