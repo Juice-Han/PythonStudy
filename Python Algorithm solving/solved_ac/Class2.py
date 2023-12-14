@@ -351,3 +351,29 @@
 # for i in range(M-1,N):
 #     if n_list[i] == 1:
 #         stdout.write(str(i+1) + '\n')
+
+# 프린터 큐 1966번
+from sys import stdin, stdout
+testCase = int(input())
+for i in range(testCase):
+    N, M = map(int, stdin.readline().split())
+    n_list = list(map(int,stdin.readline().split()))
+    count = 1
+    while 1:
+        if n_list[0] >= max(n_list):
+            if M == 0:
+                stdout.write(f'{count}\n')
+                break
+            else:
+                del n_list[0]
+                M -= 1
+                count += 1
+        else:
+            if M == 0:
+                M = len(n_list)-1
+                n_list.append(n_list[0])
+                del n_list[0]
+            else:
+                n_list.append(n_list[0])
+                del n_list[0]
+                M -= 1
