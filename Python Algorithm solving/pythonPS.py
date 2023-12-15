@@ -631,4 +631,116 @@
 
 # print(solution(board))
 
-#PS-33
+# cos pro 1급 3차시 5번
+# def bishop_int(bishop):
+#     x = ord(bishop[0]) +1 -65
+#     y = int(bishop[1])
+#     return (x,y)
+
+# def bishop_move(bishop):
+#     result = set()
+#     x, y = bishop_int(bishop)
+#     b_up = y - x
+#     b_down = y + x
+
+#     for i in range(1,9):
+#         if 0 < i+b_up < 9:
+#             result.add((i,i+b_up))
+#         if 0 < -i+b_down < 9:
+#             result.add((i,-i+b_down))
+
+#     return result
+
+# def solution(bishops):
+#     result = set([bishop_int(bishop) for bishop in bishops])
+#     for bishop in bishops:
+#         result |= bishop_move(bishop)
+#     return 64 - len(result)
+
+# print(solution(["D5"]))
+# print(solution(["D5","E8","G2"]))
+
+# cos pro 1급 3차시 4번
+# def counting(s1,s2):
+#     count = 0
+#     for i in range(1,min(len(s1),len(s2))+1):
+#         tmp1 = s1[-i::1]
+#         tmp2 = s2[0:i]
+#         if tmp1 == tmp2:
+#             count = i
+#     return len(s1)+len(s2)-count
+
+# def sol(s1, s2):
+#     result = [counting(s1,s2), counting(s2,s1)]
+#     return min(result)
+
+# print(sol("ababcd","abcdab"))
+
+#cos pro 1급 3차시 5번
+
+# def solution(phrases, second):
+#     answer = ''
+#     display = '______________' + phrases
+#     for i in range(second):
+#         display = display[1:] + display[0]
+#     answer = display[:14]
+#     return answer
+# phrases = "happy-birthday"
+# second = 3
+# print("solution 함수의 반환 값은 ", solution(phrases, second), "입니다.")
+
+# cos pro 1급 5차시 2번
+
+# def solution(walls):
+#     answer = 0
+#     for i in range(len(walls)):
+#         for j in range(i+1, len(walls)):
+#             area = 0
+#             if walls[i][1] < walls[j][1]:
+#                 area = walls[i][1] * (walls[j][0] - walls[i][0])
+#             else:
+#                 area = walls[j][1] * (walls[j][0] - walls[i][0])
+#             if answer < area:
+#                 answer = area
+#     return answer
+
+# walls = [[1,4], [2, 6], [3, 5], [5,3], [6,2]]
+# ret = solution(walls)
+
+# print("solution 함수의 반환 값은 ", ret, "입니다.")
+
+# cos pro 1급 5차시 9번
+# import queue
+# def solution(number, target):
+#     answer = 0
+#     visited = [0 for _ in range(10001)]
+#     q = queue.Queue()
+#     q.put(number)
+#     visited[number] = 1
+#     while not q.empty():
+#         x = q.get()
+#         if x == target:
+#             break
+#         if x+1 <= 10000 and visited[x+1] == 0:
+#             visited[x+1] = visited[x]+1
+#             q.put(x+1)
+#         if x-1 >= 0 and visited[x-1] == 0:
+#             visited[x-1] = visited[x]+1
+#             q.put(x-1)
+#         if 2*x <= 10000 and visited[2*x] == 0:
+#             visited[2*x] = visited[x]+1
+#             q.put(2*x)
+#     answer = visited[target] -1 
+#     return answer
+
+# number1 = 5
+# target1 = 9
+# ret1 = solution(number1, target1)
+
+# print("solution 함수의 반환 값은 ", ret1, "입니다.")
+
+# number2 = 3
+# target2 = 11
+# ret2 = solution(number2, target2)
+
+# print("solution 함수의 반환 값은 ", ret2, "입니다.")
