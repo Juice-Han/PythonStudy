@@ -377,3 +377,11 @@
 #                 n_list.append(n_list[0])
 #                 del n_list[0]
 #                 M -= 1
+
+# 통계학 2108번
+
+from sys import stdin, stdout
+N = int(stdin.readline())
+n_list = []
+for i in range(N):
+    n_list.append(int(stdin.readline()))
