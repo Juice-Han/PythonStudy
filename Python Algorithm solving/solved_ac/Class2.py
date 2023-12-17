@@ -400,3 +400,18 @@
 # v3 = max_index-4000
 # v4 = n_list[-1]-n_list[0]
 # stdout.write(f'{v1}\n{v2}\n{v3}\n{v4}\n')
+
+# 랜선 자르기 1654번
+
+from sys import stdin, stdout
+K, N = map(int,stdin.readline().split())
+k_list = []
+for i in range(K):
+    k_list.append(int(stdin.readline()))
+for i in range(min(k_list),0,-1):
+    count = 0
+    for j in range(K):
+        count += k_list[j]//i
+    if count == N:
+        stdout.write(f'{i}\n')
+        break
