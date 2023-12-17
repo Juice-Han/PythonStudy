@@ -380,8 +380,23 @@
 
 # 통계학 2108번
 
-from sys import stdin, stdout
-N = int(stdin.readline())
-n_list = []
-for i in range(N):
-    n_list.append(int(stdin.readline()))
+# from sys import stdin, stdout
+# N = int(stdin.readline())
+# n_list = []
+# n_list2 = [0 for _ in range(8001)]
+# for i in range(N):
+#     a = int(stdin.readline())
+#     n_list.append(a)
+#     n_list2[a+4000] += 1
+# n_list.sort()
+# v1 = round(sum(n_list)/N + 1e-9)
+# v2 = n_list[N//2]
+# max_index = n_list2.index(max(n_list2))
+# if max_index != 8000 :
+#     for i in range(max_index+1,8001):
+#         if n_list2[max_index] == n_list2[i]:
+#             max_index = i
+#             break
+# v3 = max_index-4000
+# v4 = n_list[-1]-n_list[0]
+# stdout.write(f'{v1}\n{v2}\n{v3}\n{v4}\n')
