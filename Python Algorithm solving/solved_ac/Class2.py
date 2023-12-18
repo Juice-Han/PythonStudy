@@ -403,32 +403,38 @@
 
 # 랜선 자르기 1654번
 
-from sys import stdin, stdout
-def array_divide(array,value):
-    count = 0
-    for n in array:
-        count += n // value
-    return count
+# from sys import stdin, stdout
+# def array_divide(array,value):
+#     count = 0
+#     for n in array:
+#         count += n // value
+#     return count
 
-def binary_search(array,start,end,N):
-    if start > end:
-        return
-    global total_dict
-    divideValue = (start+end) // 2
-    v = array_divide(array,divideValue)
-    total_dict[v] = divideValue
-    if v == N:
-        return
-    elif v > N:
-        binary_search(array,divideValue+1,end,N)
-    else:
-        binary_search(array,start,divideValue-1,N)
+# def binary_search(array,start,end,N):
+#     if start > end:
+#         return
+#     global total_dict
+#     divideValue = (start+end) // 2
+#     v = array_divide(array,divideValue)
+#     if total_dict.get(v) == None:
+#         total_dict[v] = divideValue
+#     else:
+#         if total_dict[v] < divideValue:
+#             total_dict[v] = divideValue
+#     if v >= N:
+#         binary_search(array,divideValue+1,end,N)
+#     else:
+#         binary_search(array,start,divideValue-1,N)
 
-K, N = map(int,stdin.readline().split())
-k_list = []
-for i in range(K):
-    k_list.append(int(stdin.readline()))
-k_list.sort()
-total_dict = dict()
-binary_search(k_list,1,k_list[-1],N)
-print(total_dict)
+# K, N = map(int,stdin.readline().split())
+# k_list = []
+# for i in range(K):
+#     k_list.append(int(stdin.readline()))
+# k_list.sort()
+# total_dict = dict()
+# binary_search(k_list,1,k_list[-1],N)
+# answer = 0
+# for key in total_dict:
+#     if key >= N and total_dict[key] > answer:
+#         answer = total_dict[key]
+# stdout.write(str(answer) + '\n')
