@@ -438,3 +438,43 @@
 #     if key >= N and total_dict[key] > answer:
 #         answer = total_dict[key]
 # stdout.write(str(answer) + '\n')
+
+# 스택 수열 1874번
+
+# from sys import stdin, stdout
+# N = int(stdin.readline())
+# stack = []
+# n_list = []
+# count = 1
+# n_str = ''
+# for i in range(N):
+#     n = int(stdin.readline())
+#     n_list.append(n)
+# for i in range(N):
+#     if i == 0:
+#         for j in range(n_list[i]):
+#             stack.append(count)
+#             n_str += '+\n'
+#             count += 1
+#         stack.pop()
+#         n_str += '-\n'
+#         continue
+#     if n_list[i] < n_list[i-1]:
+#         if len(stack) == 0 or stack[-1] != n_list[i]:
+#             n_str = 'NO\n'
+#             break
+#         else:
+#             stack.pop()
+#             n_str += '-\n'
+#     else:
+#         if count > n_list[i]:
+#             n_str = 'NO\n'
+#             break
+#         else:
+#             for j in range(n_list[i] - count + 1):
+#                 stack.append(count)
+#                 n_str += '+\n'
+#                 count += 1
+#             stack.pop()
+#             n_str += '-\n'
+# stdout.write(n_str)
