@@ -478,3 +478,81 @@
 #             stack.pop()
 #             n_str += '-\n'
 # stdout.write(n_str)
+
+# 마인크래프트 18111번 pypy3로 제출했을 때 성공
+
+# from sys import stdin, stdout
+# N,M,B = map(int,stdin.readline().split())
+# b_list = []
+# total_blocks = 0
+# for i in range(N):
+#     b = list(map(int,stdin.readline().split()))
+#     total_blocks += sum(b)
+#     b_list.append(b)
+    
+# # 최소, 최대 블록 값 저장
+# b_min, b_max = min(b_list[0]), max(b_list[0])
+# for b in b_list:
+#     if max(b) > b_max:
+#         b_max = max(b)
+#     if min(b) < b_min:
+#         b_min = min(b)
+
+# #최소 블록부터 최대 블록 높이까지 모든 경우의 수에서 걸리는 시간 계산
+# #불가능한 경우라면 그 이후부터 계산 X
+# min_time = 500*500*2*257
+# ans_height = 0
+# for height in range(b_min, b_max+1):
+#     num_cut, num_pile = 0, 0
+#     inventory = B
+#     for blocks in b_list:
+#         for b in blocks:
+#             if b < height:
+#                 num_pile += height-b
+#             else:
+#                 num_cut += b-height
+
+#     if num_cut+height-num_pile >= 0:
+#         time = 2*num_cut+num_pile
+#         if min_time > time:
+#             min_time = time
+#             ans_height = height
+
+# #걸리는 시간이 중복된다면 높이가 더 높은 경우가 저장됨
+# stdout.write(f'{min_time} {ans_height}\n')
+
+# from sys import stdin, stdout
+# N,M,B = map(int,stdin.readline().split())
+# b_list = [0]*257
+# total_blocks = 0
+# min_time = 500*500*2*256
+# ans_height = 0
+# for i in range(N):
+#     for height in map(int,stdin.readline().split()):
+#         b_list[height] += 1
+#         total_blocks += height
+# min_height, max_height = 256, 0
+
+# for height in range(257):
+#     if b_list[height] != 0 and min_height > height:
+#         min_height = height
+#     if b_list[height] != 0 and max_height < height:
+#         max_height = height
+
+# for target_height in range(min_height,max_height+1):
+#     cut_block = 0
+#     file_block = 0
+#     for height in range(min_height, max_height+1):
+#         if height > target_height:
+#             cut_block += b_list[height]*(height-target_height)
+#         else:
+#             file_block += b_list[height]*(target_height - height)
+#     if cut_block + B - file_block >= 0:
+#         time = 2*cut_block + file_block
+#         if time <= min_time:
+#             min_time = time
+#             ans_height = target_height
+# stdout.write(f'{min_time} {ans_height}\n')
+# 2차원 배열로 block 정보를 저장하는게 아니라 1차원 배열에 index를 block의 크기로 놓는다면
+# 저장되는 데이터의 양을 효과적으로 줄일 수 있다.
+
