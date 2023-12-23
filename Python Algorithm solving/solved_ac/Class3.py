@@ -47,3 +47,22 @@
 #             check(n_dict, int(x))
 #         else:
 #             toggle(n_dict,int(x))
+
+# 나는야 포켓몬 마스터 이다솜 1620번
+
+# from sys import stdin, stdout
+# N, M = map(int,stdin.readline().split())
+# name2num_dict = dict()
+# num2name_dict = dict()
+
+# for i in range(1, N+1):
+#     name = stdin.readline().rstrip()
+#     name2num_dict[name] = i
+#     num2name_dict[i] = name
+
+# for i in range(M):
+#     value = stdin.readline().rstrip()
+#     if value.isalpha():
+#         stdout.write(str(name2num_dict[value]) + '\n')
+#     else:
+#         stdout.write(num2name_dict[int(value)] + '\n')
