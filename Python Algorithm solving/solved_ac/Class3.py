@@ -125,3 +125,15 @@
 #     sitePwd[site] = pwd
 # for i in range(M):
 #     stdout.write(str(sitePwd[stdin.readline().rstrip()]) + '\n')
+
+# 피보나치 함수 1003번
+# from sys import stdin, stdout
+# n_list = [[0,0] for _ in range(41)]
+# n_list[0], n_list[1] = [1,0], [0,1]
+# for i in range(2,41):
+#     n_list[i][0] = n_list[i-1][0] + n_list[i-2][0]
+#     n_list[i][1] = n_list[i-1][1] + n_list[i-2][1]
+# T = int(stdin.readline())
+# for i in range(T):
+#     index = int(stdin.readline())
+#     stdout.write(f'{n_list[index][0]} {n_list[index][1]}\n')
