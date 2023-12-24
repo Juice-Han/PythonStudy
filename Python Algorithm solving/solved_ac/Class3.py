@@ -66,3 +66,21 @@
 #         stdout.write(str(name2num_dict[value]) + '\n')
 #     else:
 #         stdout.write(num2name_dict[int(value)] + '\n')
+
+# 듣보잡 1764번
+
+# from sys import stdin, stdout
+# N, M = map(int,stdin.readline().split())
+# neverHeard = dict()
+# neverSeen = []
+# answer = []
+# for i in range(N):
+#     neverHeard[stdin.readline().rstrip()] = 1
+# for i in range(M):
+#     name = stdin.readline().rstrip()
+#     if name in neverHeard:
+#         answer.append(name)
+# answer.sort()
+# stdout.write(str(len(answer))+ '\n')
+# for name in answer:
+#     stdout.write(name + '\n')
