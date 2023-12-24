@@ -137,3 +137,28 @@
 # for i in range(T):
 #     index = int(stdin.readline())
 #     stdout.write(f'{n_list[index][0]} {n_list[index][1]}\n')
+
+# 1로 만들기 1463번
+
+# from sys import stdin, stdout
+# import queue
+# N = int(stdin.readline())
+# history = [0] * 1000001
+# history[N] = 1
+# queue = queue.Queue()
+# queue.put(N)
+# while history[1] == 0:
+#     n = queue.get()
+#     v1 = n//3
+#     v2 = n//2
+#     v3 = n-1
+#     if n%3 == 0 and history[v1] == 0:
+#         queue.put(v1)
+#         history[v1] = history[n] + 1
+#     if n%2 == 0 and history[v2] == 0:
+#         queue.put(v2)
+#         history[v2] = history[n] + 1
+#     if history[v3] == 0:
+#         queue.put(v3)
+#         history[v3] = history[n] + 1
+# stdout.write(str(history[1] -1) + '\n')
