@@ -84,3 +84,22 @@
 # stdout.write(str(len(answer))+ '\n')
 # for name in answer:
 #     stdout.write(name + '\n')
+
+# 동전 0 11047번
+
+# from sys import stdin, stdout
+# N, K = map(int,stdin.readline().split())
+# count = 0
+# val_list = []
+# for i in range(N):
+#     val_list.append(int(stdin.readline()))
+# index = len(val_list) -1
+# while index > -1:
+#     div = K // val_list[index]
+#     if div > 0:
+#         K %= val_list[index]
+#         count += div
+#     if K == 0:
+#         break
+#     index -= 1
+# stdout.write(str(count)+'\n')
