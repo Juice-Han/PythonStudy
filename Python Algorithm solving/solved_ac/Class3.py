@@ -103,3 +103,25 @@
 #         break
 #     index -= 1
 # stdout.write(str(count)+'\n')
+
+# ATM 11399번
+
+# from sys import stdin, stdout
+# p_list = []
+# N = int(stdin.readline())
+# p_list = list(map(int,stdin.readline().split()))
+# p_list.sort()
+# for i in range(1,N):
+#     p_list[i] += p_list[i-1]
+# stdout.write(str(sum(p_list)) + '\n')
+
+# 비밀번호 찾기 17219번
+
+# from sys import stdin, stdout
+# sitePwd = dict()
+# N, M = map(int,stdin.readline().split())
+# for i in range(N):
+#     site, pwd = stdin.readline().split()
+#     sitePwd[site] = pwd
+# for i in range(M):
+#     stdout.write(str(sitePwd[stdin.readline().rstrip()]) + '\n')
