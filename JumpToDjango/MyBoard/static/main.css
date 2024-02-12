@@ -1,0 +1,11 @@
+.main-card {
+    transition: transform 0.3s;
+}
+
+.main-card:hover {
+    transform: translateY(-10px);
+}
+
+img[src=''] {
+    display: none;
+}
