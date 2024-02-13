@@ -1,6 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-    <img src="{{ book.book_image.url }}" style="width: 200px; height:200px;object-fit: cover">
-    <h2>{{ book.title }}</h2>
-    <h5>{{ book.content }}</h5>
+    <div class="container my-5">
+    <div class="row justify-content-center justify-content-md-start border-bottom border-3 pb-3 gap-4 pb-md-4">
+        <img src="{{ book.book_image.url }}" class="object-fit-cover col-8 col-md-3 p-0" style="width: 300px; height:300px;">
+        <div class="col-8 col-md-auto text-center text-md-start">
+            <h2>책 제목: {{ book.title }}</h2>
+        </div>
+    </div>
+        <h5 class="my-4">{{ book.content }}</h5>
+    </div>
+
 {% endblock %}
