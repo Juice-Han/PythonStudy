@@ -13,6 +13,9 @@ def main(request):
 
 def posts(request):
     books = Book.objects.order_by('-create_dt')
+    for book in books:
+        if len(book.content) > 50:
+            book.content = ''.join([book.content[:50], '...'])
     context = {'books': books}
     return render(request, 'board/board_posts.html', context)
 
