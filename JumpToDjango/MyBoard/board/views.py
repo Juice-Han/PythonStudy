@@ -30,11 +30,9 @@ def write(request):
             return redirect('/board')
     else:
         form = BookForm()
-        context = {'form': form}
+        context = {'form': form, 'page_for': '글 작성'}
         return render(request, 'board/board_write.html', context)
     context = {'form': form}
-    print(form['title'])
-    print(form.errors)
     return render(request, 'board/board_write.html', context)
 
 
@@ -42,3 +40,19 @@ def detail(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
     context = {'book': book}
     return render(request, 'board/board_detail.html', context)
+
+
+def rewrite(request, book_id):
+    book = get_object_or_404(Book, pk=book_id)
+    if request.method == 'POST':
+        # 기본값은 이전에 저장된 값으로 사용하고 만약 새로운 값이 입력되면 기본값에 덮어씌우는 방식으로 폼을 생성
+        form = BookForm(request.POST, request.FILES, instance=book)
+        if form.is_valid():
+            book = form.save(commit=False)
+            book.modify_dt = timezone.now()
+            book.save()
+            return redirect('posts')
+    else:
+        form = BookForm(instance=book)
+    context = {'form': form, 'page_for': '글 수정', 'book_id': book_id}
+    return render(request, 'board/board_rewrite.html', context)

@@ -1,3 +1,8 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .main-card {
     transition: transform 0.3s;
 }
@@ -17,3 +22,4 @@ img[src=''] {
 .hover-scaleUp:hover {
     transform: scale(1.1);
 }
+

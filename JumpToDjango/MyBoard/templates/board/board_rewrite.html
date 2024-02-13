@@ -2,7 +2,7 @@
 {% block content %}
     <div class="container my-5 ">
     <h2 class="mb-4">{{ page_for }}</h2>
-    <form method="post" action="{% url 'write' %}" enctype="multipart/form-data">
+    <form method="post" action="{% url 'rewrite' book_id %}" enctype="multipart/form-data">
         {% csrf_token %}
         {% if form.errors %}
         <div class="alert alert-danger" role="alert">
@@ -19,15 +19,15 @@
     <div class="mb-3">
         <label class="form-label" for="book-image">책 표지</label>
         <input class="form-control" type="file" id="book-image" name="book_image" onchange="previewImg(this)">
-        <img id="preview" src="" style="width: 90px;height: 120px;object-fit: cover">
+        <img id="preview" src="{{ form.book_image.value.url }}" style="width: 90px;height: 120px;object-fit: cover">
     </div>
         <div class="mb-3">
             <label class="form-label" for="book-title">책 제목</label>
-            <input class="form-control form-control-lg" type="text" name="title" id="book-title">
+            <input class="form-control form-control-lg" type="text" name="title" id="book-title" value="{{ form.title.value }}">
         </div>
         <div class="mb-3">
             <label class="form-label" for="book-content">독후감 내용</label>
-            <textarea class="form-control" rows="10" id="book-content" name="content" style="resize: none"></textarea>
+            <textarea class="form-control" rows="10" id="book-content" name="content" style="resize: none">{{ form.content.value }}</textarea>
         </div>
         <div class="d-flex justify-content-end">
             <button class="btn btn-dark">저장</button>
