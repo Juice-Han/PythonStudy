@@ -12,7 +12,9 @@ def main(request):
 
 
 def posts(request):
-    return render(request, 'board/board_posts.html')
+    books = Book.objects.order_by('-create_dt')
+    context = {'books': books}
+    return render(request, 'board/board_posts.html', context)
 
 
 def write(request):

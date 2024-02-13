@@ -1,6 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="container">
-
+    <div class="container my-5">
+    {% if books.count == 0 %}
+        <h2>등록된 독후감이 없습니다.</h2>
+    {% else %}
+        <h1>글목록</h1>
+        <div class="row">
+        {% for book in books %}
+            <div class="card p-0 col-5 mx-3 my-4 hover-scaleUp">
+                <div class="ratio ratio-1x1">
+                    <img class="card-img w-100 object-fit-cover" src="{{ book.book_image.url }}">
+                </div>
+                <div class="card-body">
+                    <h4 class="card-title">{{ book.title }}</h4>
+                    <h6 class="card-text">{{ book.content }}</h6>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    {% endif %}
     </div>
 {% endblock %}

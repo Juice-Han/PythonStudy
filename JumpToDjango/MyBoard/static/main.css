@@ -9,3 +9,11 @@
 img[src=''] {
     display: none;
 }
+
+.hover-scaleUp {
+    transition: transform 0.2s;
+}
+
+.hover-scaleUp:hover {
+    transform: scale(1.1);
+}
