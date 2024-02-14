@@ -3,7 +3,6 @@
     <div class="container my-5 ">
     <h2 class="mb-4">{{ page_for }}</h2>
     <form method="post" action="{% url 'rewrite' book_id %}" enctype="multipart/form-data">
-        {% csrf_token %}
         {% if form.errors %}
         <div class="alert alert-danger" role="alert">
             {% for field in form %}

@@ -1,3 +1,5 @@
+import os
+
 from django.shortcuts import render, redirect, get_object_or_404
 from django.utils import timezone
 from board.models import Book
@@ -38,16 +40,22 @@ def write(request):
 
 def detail(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
+    if request.method == 'DELETE':
+        book.delete()
+        return redirect('posts')
     context = {'book': book}
     return render(request, 'board/board_detail.html', context)
 
 
 def rewrite(request, book_id):
     book = get_object_or_404(Book, pk=book_id)
+    image_path = book.book_image.path
     if request.method == 'POST':
         # 기본값은 이전에 저장된 값으로 사용하고 만약 새로운 값이 입력되면 기본값에 덮어씌우는 방식으로 폼을 생성
         form = BookForm(request.POST, request.FILES, instance=book)
         if form.is_valid():
+            if len(request.FILES) == 1 and os.path.exists(image_path):
+                os.remove(image_path)
             book = form.save(commit=False)
             book.modify_dt = timezone.now()
             book.save()
