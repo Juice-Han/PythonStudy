@@ -127,7 +127,6 @@ if options.solve == True:
                         first_end_time[job[0]][0] = thetime
                 thetime += job[1]
                 first_end_time[job[0]][1] = thetime # 종료된 시간 저장
-                print(first_end_time)
             
             print('\nFinal statistics:')
             t = 0.0
