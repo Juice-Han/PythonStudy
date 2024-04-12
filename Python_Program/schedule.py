@@ -93,6 +93,8 @@ if options.solve == True:
     if options.policy == 'FIFO':
         thetime = 0
         print('Execution trace:')
+        if(arrival_time[-1] != 0): # 만약 arrival time이 존재하는 경우 arrival time 순으로 정렬 후 FIFO 실행
+            joblist = sorted(joblist, key=operator.itemgetter(2))
         for job in joblist:
             print('  [ time %3d ] Run job %d for %.2f secs ( DONE at %.2f )' % (
                 thetime, job[0], job[1], thetime + job[1]))
