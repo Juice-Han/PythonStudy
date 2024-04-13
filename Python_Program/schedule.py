@@ -92,7 +92,7 @@ if options.solve == True:
             options.policy = 'FIFO'
         else: # 만약 arrival time이 존재하는 경우 STCF 실행
             thetime = 0
-            first_end_time = [[-1,-1] for _ in range(len(joblist))] # 처음 시작된 시간과 종료된 시간을 저장
+            first_end_time = [[-1,-1] for _ in range(len(joblist))] # 처음 시작된 시간과 종료된 시간을 저장하는 배열
             print('Execution trace:')
             while(True):
                 arrival_zero_jobs = list(filter(lambda job : job[2] == 0, joblist)) # arrival time이 0인 job들을 filtering
@@ -202,6 +202,7 @@ if options.solve == True:
 
         thetime = 0.0
         while jobcount > 0:
+            runlist = sorted(runlist,key=operator.itemgetter(2)) # runlist를 arrival time 순으로 정렬
             job = runlist.pop(0)
             jobnum = job[0]
             runtime = float(job[1])
@@ -209,11 +210,12 @@ if options.solve == True:
                 response[jobnum] = thetime
             currwait = thetime - lastran[jobnum]
             wait[jobnum] += currwait
+            
             if runtime > quantum:
                 runtime -= quantum
                 ranfor = quantum
                 print('  [ time %3d ] Run job %3d for %.2f secs' % (thetime, jobnum, ranfor))
-                runlist.append([jobnum, runtime])
+                runlist.append([jobnum, runtime, job[2]])
             else:
                 ranfor = runtime;
                 print('  [ time %3d ] Run job %3d for %.2f secs ( DONE at %.2f )' % (
@@ -222,6 +224,10 @@ if options.solve == True:
                 jobcount -= 1
             thetime += ranfor
             lastran[jobnum] = thetime
+
+            for job in runlist: # arrival time이 0이 아닌 job들의 arrival time을 재설정
+                if job[2] != 0:
+                    job[2] = job[2] - quantum if job[2] >= quantum else 0
 
         print('\nFinal statistics:')
         turnaroundSum = 0.0
