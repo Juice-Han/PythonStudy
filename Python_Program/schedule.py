@@ -44,12 +44,11 @@ if options.jlist == '':
         arrival_time = [0,0,0]
         print('ARG arrival time 0,0,0') # 사용자가 job list를 입력하지 않았다면 default arrival time인 0,0,0 콘솔창 출력
     else:
-        if(len(options.arrival.split(',')) != 3): # 만약 사용자가 job list를 입력하지 않았는데 arrival time을 입력했다면 개수가 맞을 경우 해당 arrival time을 각각 할당
+        if(len(options.arrival.split(',')) != 3): # 만약 사용자가 job list를 입력하지 않았는데 arrival time을 입력했는데 개수가 기본값인 3개가 아니라면 오류 출력 후 프로그램 종료
             sys.exit('job의 개수와 arrival time의 개수를 맞춰주세요.')
         for time in options.arrival.split(','): # 만약 사용자가 arrival time을 입력했을 경우 각 job에 입력받은 arrival time 각각 할당
             arrival_time.append(time)
         print('ARG arrival time',','.join(map(str,arrival_time)))
-    
     
 else:
     print('ARG jlist', options.jlist)
@@ -57,7 +56,7 @@ else:
         for i in options.jlist.split(','): 
             arrival_time.append(0) # 입력받은 job list의 개수만큼 0 할당
     else:
-        if(len(options.jlist.split(',')) != len(options.arrival.split(','))): # 만약 입력받은 job의 개수와 arrival time의 개수가 맞지 않을 경우 프로그램 종료
+        if(len(options.jlist.split(',')) != len(options.arrival.split(','))): # 만약 입력받은 job의 개수와 arrival time의 개수가 맞지 않을 경우 오류 출력 후 프로그램 종료
             sys.exit('job의 개수와 arrival time의 개수를 맞춰주세요.')
         for time in options.arrival.split(','): # 만약 사용자가 arrival time을 입력했을 경우 각 job에 입력받은 arrival time 각각 할당
             arrival_time.append(time)
@@ -73,12 +72,12 @@ joblist = []
 if options.jlist == '':
     for jobnum in range(0, options.jobs):
         runtime = int(options.maxlen * random.random()) + 1
-        joblist.append([jobnum, runtime, int(arrival_time[jobnum])])
+        joblist.append([jobnum, runtime, int(arrival_time[jobnum])]) # joblist에 arrival time 속성 추가
         print('  Job', jobnum, '( length = ' + str(runtime) + ', arrival time = ' + str(arrival_time[jobnum]) + ' )')
 else:
     jobnum = 0
     for runtime in options.jlist.split(','):
-        joblist.append([jobnum, float(runtime), int(arrival_time[jobnum])])
+        joblist.append([jobnum, float(runtime), int(arrival_time[jobnum])]) # joblist에 arrival time 속성 추가
         jobnum += 1
     for job in joblist:
         print('  Job', job[0], '( length = ' + str(job[1]) + ', arrival time = ' + str(job[2]) + ' )')
@@ -95,10 +94,10 @@ if options.solve == True:
             first_end_time = [[-1,-1] for _ in range(len(joblist))] # 처음 시작된 시간과 종료된 시간을 저장하는 배열
             print('Execution trace:')
             while(True):
-                arrival_zero_jobs = list(filter(lambda job : job[2] == 0, joblist)) # arrival time이 0인 job들을 filtering
-                arrival_not_zero_jobs = list(filter(lambda job: job[2] != 0, joblist)) # arrival time이 0이 아닌 job들을 filtering
+                arrival_zero_jobs = list(filter(lambda job : job[2] == 0, joblist)) # arrival time이 0인 job들을 filtering해서 저장
+                arrival_not_zero_jobs = list(filter(lambda job: job[2] != 0, joblist)) # arrival time이 0이 아닌 job들을 filtering해서 저장
                 arrival_zero_jobs = sorted(arrival_zero_jobs, key=operator.itemgetter(1)) # arrival time이 0인 job들을 runtime 순으로 정렬
-                arrival_not_zero_jobs = sorted(arrival_not_zero_jobs, key=operator.itemgetter(2)) # arrival time이 0이 아닌 job들을 arrival time 순으로 정렬
+                arrival_not_zero_jobs = sorted(arrival_not_zero_jobs, key=operator.itemgetter(2)) # arrival time이 0이 아닌 job들은 arrival time 순으로 정렬
 
                 if(len(arrival_not_zero_jobs) != 0): # 만약 arrival time이 0이 아닌 job이 존재할 경우, 즉 도착할 job이 남아있을 경우
                     print('  [ time %3d ] Run job %d for %.2f' % (
@@ -215,7 +214,7 @@ if options.solve == True:
                 runtime -= quantum
                 ranfor = quantum
                 print('  [ time %3d ] Run job %3d for %.2f secs' % (thetime, jobnum, ranfor))
-                runlist.append([jobnum, runtime, job[2]])
+                runlist.append([jobnum, runtime, job[2]]) # runlist에 arrival time 속성 추가
             else:
                 ranfor = runtime;
                 print('  [ time %3d ] Run job %3d for %.2f secs ( DONE at %.2f )' % (
