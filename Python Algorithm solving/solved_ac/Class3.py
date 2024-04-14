@@ -162,3 +162,21 @@
 #         queue.put(v3)
 #         history[v3] = history[n] + 1
 # stdout.write(str(history[1] -1) + '\n')
+
+# 계단 오르기 2579번
+
+def solution(stair, trace, isJumpedOnce,high): # 계단 오르기 게임에서 얻을 수 있는 최댓값 계산해주는 함수
+    if(len(stair) == high):
+        return sum(trace)
+    if(len(stair) == high - 2 and isJumpedOnce == 1):
+        trace.append(stair[-1])
+        return solution(stair,trace,False,high+2)
+            
+
+
+from sys import stdin, stdout
+N = int(stdin.readline()) # 계단의 개수
+stair = [] # 계단 숫자 리스트
+for i in range(N):
+    stair.append(int(stdin.readline()))
+stdout.write(str(solution(stair,[],False,0)))
