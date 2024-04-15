@@ -165,18 +165,20 @@
 
 # 계단 오르기 2579번
 
-def solution(stair, trace, isJumpedOnce,high): # 계단 오르기 게임에서 얻을 수 있는 최댓값 계산해주는 함수
-    if(len(stair) == high):
-        return sum(trace)
-    if(len(stair) == high - 2 and isJumpedOnce == 1):
-        trace.append(stair[-1])
-        return solution(stair,trace,False,high+2)
-            
-
-
 from sys import stdin, stdout
-N = int(stdin.readline()) # 계단의 개수
-stair = [] # 계단 숫자 리스트
-for i in range(N):
-    stair.append(int(stdin.readline()))
-stdout.write(str(solution(stair,[],False,0)))
+
+n = int(stdin.readline())
+
+stairs = [0] * 301
+for i in range(1, n+1):
+    stairs[i] = int(stdin.readline())
+
+dp = [0] * 301
+dp[1] = stairs[1]
+dp[2] = stairs[1] + stairs[2]
+dp[3] = max(stairs[1]+stairs[3],stairs[2]+stairs[3])
+
+for i in range(4, n+1):
+    dp[i] = max(dp[i-3] + stairs[i - 1] +  stairs[i], dp[i-2] + stairs[i])
+
+stdout.write(str(dp[n]) + '\n')
