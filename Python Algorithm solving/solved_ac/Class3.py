@@ -182,3 +182,27 @@
 #     dp[i] = max(dp[i-3] + stairs[i - 1] +  stairs[i], dp[i-2] + stairs[i])
 
 # stdout.write(str(dp[n]) + '\n')
+
+# 바이러스 2606번
+
+from sys import stdin, stdout
+
+N = int(stdin.readline())
+P = int(stdin.readline())
+queue = [1] # 연결 정보 확인용 큐 
+check = [0] * 101 # 바이러스에 걸린 컴퓨터 체크
+connect = [[] for _ in range(101)] # 연결 정보 저장 리스트
+for i in range(P):
+    a, b = map(int,stdin.readline().strip().split(' '))
+    connect[a].append(b)
+    connect[b].append(a)
+while len(queue) != 0:
+    computer = queue.pop() # 큐에 저장된 컴퓨터 확인
+    for dest in connect[computer]:
+        if check[dest] == 0:
+            queue.insert(0,dest) # 연결된 컴퓨터 큐에 추가
+            check[dest] = 1 # 바이러스 감염 체크
+if sum(check) == 0:
+    stdout.write('0\n')
+else:
+    stdout.write(str(sum(check) - 1) + '\n')
