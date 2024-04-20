@@ -206,3 +206,43 @@
 #     stdout.write('0\n')
 # else:
 #     stdout.write(str(sum(check) - 1) + '\n')
+
+# 1,2,3 더하기 9095번
+
+from sys import stdin, stdout
+
+def factorial(x): # factorial 계산 함수
+    if x == 0 or x == 1:
+        return 1
+    n = 1
+    for i in range(1,x+1):
+        n *= i
+    return n
+
+def calculate(a,b,c): # 중복이 순열 경우의 수 계산
+    return int(factorial(a+b+c) / (factorial(a) * factorial(b) * factorial(c)))
+
+N = int(stdin.readline())
+comb = [[3],[3,2],[3,2,1],[3,1],[2],[2,1],[1]]
+for i in range(N):
+    T = int(stdin.readline())
+    s = 0
+    tmpT = T
+    for j in range(7):
+        a,b,c = -1,-1,-1
+        for com in comb[j]:
+            if com == 3:
+                a = tmpT//3
+                tmpT = tmpT%3
+            if com == 2:
+                b = tmpT//2
+                tmpT = tmpT%2
+            if com == 1:
+                c = tmpT
+                tmpT = 0
+        if tmpT != 0:
+            print('pass')
+            continue
+        s += calculate(a,b,c)
+        print(s)
+    stdout.write(str(s)+'\n')
