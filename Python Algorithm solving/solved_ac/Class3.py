@@ -258,3 +258,28 @@
 #         s += calculate(a,b,c)
 #     stdout.write(str(s)+'\n')
 #     numbers.clear()
+
+# 패션왕 신해빈 9375
+
+# from sys import stdin, stdout
+
+# T = int(stdin.readline())
+# for i in range(T):
+#     N = int(stdin.readline())
+#     fashion_items = dict()
+#     if N == 0:
+#         stdout.write('0\n')
+#         continue
+#     for j in range(N):
+#         item, category = stdin.readline().strip().split(' ')
+#         if category in fashion_items:
+#             fashion_items[category] += 1
+#         else:
+#             fashion_items[category] = 1
+#     if N == 1:
+#         stdout.write('1\n')
+#         continue
+#     s = 1
+#     for key in fashion_items.keys():
+#         s *= fashion_items[key] + 1
+#     stdout.write(str(s-1)+'\n')
