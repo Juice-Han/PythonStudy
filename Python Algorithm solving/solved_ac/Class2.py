@@ -558,3 +558,12 @@
 
 # 파도반 수열 9461번
 
+# from sys import stdin, stdout
+# T = int(stdin.readline())
+# tri_len = [0]*100
+# tri_len[0], tri_len[1], tri_len[2], tri_len[3], tri_len[4] = 1,1,1,2,2
+# for i in range(5,100):
+#     tri_len[i] = tri_len[i-1] + tri_len[i-5]
+# for i in range(T):
+#     N = int(stdin.readline())
+#     stdout.write(str(tri_len[N-1])+'\n')
