@@ -286,14 +286,16 @@
 
 # 구간 합 구하기 4 11659번
 
-from sys import stdin, stdout
+# from sys import stdin, stdout
 
-N, M = map(int,stdin.readline().strip().split())
-nums = []
-sums = [0]
-for n in list(map(int,stdin.readline().strip().split())):
-    nums.append(n)
-    
-for i in range(M):
-    a,b = map(int,stdin.readline().strip().split())
-    stdout.write(str(sum(nums[a:b+1]))+'\n')
+# N, M = map(int,stdin.readline().strip().split())
+# nums = [0]
+# for n in list(map(int,stdin.readline().strip().split())):
+#     nums.append(n)
+# sums = [0] * (N+1)
+# sums[1] = nums[0]
+# for i in range(1,N+1):
+#     sums[i] = sums[i-1] + nums[i]
+# for i in range(M):
+#     a,b = map(int,stdin.readline().strip().split())
+#     stdout.write(str(sums[b] - sums[a-1])+'\n')
