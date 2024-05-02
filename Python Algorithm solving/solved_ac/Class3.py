@@ -283,3 +283,17 @@
 #     for key in fashion_items.keys():
 #         s *= fashion_items[key] + 1
 #     stdout.write(str(s-1)+'\n')
+
+# 구간 합 구하기 4 11659번
+
+from sys import stdin, stdout
+
+N, M = map(int,stdin.readline().strip().split())
+nums = []
+sums = [0]
+for n in list(map(int,stdin.readline().strip().split())):
+    nums.append(n)
+    
+for i in range(M):
+    a,b = map(int,stdin.readline().strip().split())
+    stdout.write(str(sum(nums[a:b+1]))+'\n')
