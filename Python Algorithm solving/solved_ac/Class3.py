@@ -299,3 +299,14 @@
 # for i in range(M):
 #     a,b = map(int,stdin.readline().strip().split())
 #     stdout.write(str(sums[b] - sums[a-1])+'\n')
+
+# 2xn 타일링 11726번
+
+# N을 2와 1의 합으로 나타낼 수 있는 경우의 수를 의미
+
+# N = int(input()) # 1 <= N <= 1000
+# comb = [0] * 1001
+# comb[0], comb[1], comb[2] = 0, 1, 2 # 초깃값 저장
+# for i in range(3, N+1):
+#     comb[i] = comb[i-1] + comb[i-2]
+# print(comb[N] % 10007)
