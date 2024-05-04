@@ -310,3 +310,12 @@
 # for i in range(3, N+1):
 #     comb[i] = comb[i-1] + comb[i-2]
 # print(comb[N] % 10007)
+
+# 2xn 타일링 11727번
+
+# N = int(input()) # 1 <= N <= 1000
+# comb = [0] * 1001
+# comb[0], comb[1], comb[2] = 0, 1, 3 # 초깃값 저장
+# for i in range(3, N+1):
+#     comb[i] = comb[i-1] + 2* comb[i-2]
+# print(comb[N] % 10007)
