@@ -319,3 +319,24 @@
 # for i in range(3, N+1):
 #     comb[i] = comb[i-1] + 2* comb[i-2]
 # print(comb[N] % 10007)
+
+# Four Squares 17626번
+
+# def solution(N, count, numList):
+    
+
+N = int(input())
+numList = [] # 1부터 223까지의 제곱을 계산하여 저장한 리스트 223^2 = 49729
+
+for i in range(1,224):
+    numList.append(i**2)
+
+tmp = 1
+while numList[tmp] <= N: # N보다 작은 숫자들만 리스트에 남김
+    tmp += 1
+numList = numList[0:tmp]
+
+if N in numList:
+    print('1\n')
+else:
+    for count in range(2,5):
