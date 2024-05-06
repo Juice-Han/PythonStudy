@@ -322,7 +322,15 @@
 
 # Four Squares 17626번
 
-# def solution(N, count, numList):
+
+def solution(N, curList, numList):
+    s = sum(curList)
+    if s == N:
+        return len(curList)
+    if s > N:
+        return 5
+    tmp = numList.copy()
+    
     
 
 N = int(input())
@@ -340,3 +348,4 @@ if N in numList:
     print('1\n')
 else:
     for count in range(2,5):
+        
