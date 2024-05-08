@@ -329,7 +329,7 @@ def solution(N, curList, numList):
         return len(curList)
     if s > N:
         return 5
-    tmp = numList.copy()
+    tmp = numList.copy() # 배열 깊은 복사
     
     
 
