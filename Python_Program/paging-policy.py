@@ -176,8 +176,8 @@ else:
                         access.append(0)
                         break # victim 지정 후 반복문 종료
                     
-                    if index == cachesize:
-                        victim = memory.pop(0) # 만약 access bit의 값이 모두 1이라면 가장 오래된 page를 victim으로 설정
+                    if index == cachesize: # 만약 access bit의 값이 모두 1일 때
+                        victim = memory.pop(0) # 가장 오래된 page를 victim으로 설정
 
                 elif policy == 'MRU':
                     victim = memory.pop(count-1)
