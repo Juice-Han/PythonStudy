@@ -567,3 +567,41 @@
 # for i in range(T):
 #     N = int(stdin.readline())
 #     stdout.write(str(tri_len[N-1])+'\n')
+
+# FizzBuzz 28702번
+# from sys import stdin, stdout
+# count = 0
+# num = ""
+# for i in range(3):
+#     tmp = stdin.readline().strip()
+#     if tmp.isdigit():
+#         count = 3 - i
+#         num = tmp
+# num = int(num) + count
+# check1 = num % 3 == 0
+# check2 = num % 5 == 0
+# if check1 and check2:
+#     stdout.write('FizzBuzz\n')
+# elif check1:
+#     stdout.write('Fizz\n')
+# elif check2:
+#     stdout.write('Buzz\n')
+# else:
+#     stdout.write(str(num)+str('\n'))
+
+# 웰컴 키트 30802번
+# from sys import stdin, stdout
+# N = int(stdin.readline())
+# sizeList = list(map(int,stdin.readline().strip().split()))
+# tb, pb = map(int,stdin.readline().strip().split())
+# T, P, p = 0, 0, 0
+# for n in sizeList:
+#     tmp = n % tb 
+#     if tmp == 0:
+#         T += n // tb
+#     else:
+#         T += n // tb + 1
+# P = sum(sizeList) // pb
+# p = sum(sizeList) % pb
+# stdout.write(f'{T}\n')
+# stdout.write(f'{P} {p}\n')
